@@ -1,3 +1,10 @@
+/**
+ * Custom printf implementation header
+ * This header defines the structures and function prototypes for a custom
+ * implementation of printf with support for various format specifiers,
+ * flags, field width, precision, and length modifiers.
+ */
+
 #ifndef MAIN_H
 #define MAIN_H
 #include <stdarg.h>
@@ -8,6 +15,14 @@
 #define BUFF_SIZE 1024
 
 /* FLAGS */
+/**
+ * Flag definitions for format specifiers:
+ * F_MINUS (1): Left-justify within field width
+ * F_PLUS  (2): Force plus sign for positive numbers
+ * F_ZERO  (4): Zero-pad numbers (instead of spaces)
+ * F_HASH  (8): Alternate form (#)
+ * F_SPACE (16): Space before positive numbers
+ */
 #define F_MINUS 1
 #define F_PLUS 2
 #define F_ZERO 4
@@ -15,21 +30,33 @@
 #define F_SPACE 16
 
 /* SIZES */
+/**
+ * Length modifier definitions:
+ * S_LONG  (2): 'l' modifier (long)
+ * S_SHORT (1): 'h' modifier (short)
+ */
 #define S_LONG 2
 #define S_SHORT 1
 
 /**
- * struct fmt - Struct op
+ * struct fmt - Format handler structure
+ * @fmt: The format character
+ * @fn: The associated handling function
  *
- * @fmt: The format.
- * @fn: The function associated.
+ * This structure maps format specifiers to their handling functions.
+ * Each function takes various parameters to control the formatting:
+ * - va_list: Variable argument list
+ * - char[]: Output buffer
+ * - flags: Formatting flags
+ * - width: Field width
+ * - precision: Precision specification
+ * - size: Length modifier
  */
 struct fmt
 {
 	char fmt;
 	int (*fn)(va_list, char[], int, int, int, int);
 };
-
 
 /**
  * typedef struct fmt fmt_t - Struct op

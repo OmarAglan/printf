@@ -1,0 +1,63 @@
+# Build directories
+obj/
+lib/
+
+# Compiled files
+*.o
+*.out
+*.exe
+*.dll
+*.so
+*.dylib
+main
+test_printf
+
+# Libraries
+*.lib
+*.a
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project specific executables
+_printf
+a.out
+
+# Dependency directories
+deps/
+
+# Backup files
+*.bak
+*.tmp
+*.temp
+
+# Code coverage
+*.gcno
+*.gcda
+*.gcov
+
+# Patch files
+*.patch
+*.diff
+
+# Core dumps
+core
